@@ -1,0 +1,32 @@
+{
+    "name": "vainyl/redis",
+    "type": "shared-package",
+    "authors": [
+        {
+            "name": "Taras Girnyk",
+            "email": "taras.p.gyrnik@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Vainyl\\Redis\\": "src/"
+        }
+    },
+    "require": {
+        "psr/simple-cache": "~1.0",
+        "vainyl/core": "dev-master",
+        "vainyl/connection": "dev-master",
+        "vainyl/database": "dev-master"
+    },
+    "config": {
+        "secure-http": false
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://78.47.118.217"
+        }
+    ],
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}
