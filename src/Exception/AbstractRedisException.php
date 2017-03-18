@@ -4,9 +4,9 @@
  *
  * PHP Version 7
  *
- * @package   vain-cache
+ * @package   Redis
  * @license   https://opensource.org/licenses/MIT MIT License
- * @link      https://github.com/allflame/vain-cache
+ * @link      https://vainyl.com
  */
 declare(strict_types = 1);
 

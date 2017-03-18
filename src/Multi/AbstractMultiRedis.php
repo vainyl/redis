@@ -4,11 +4,11 @@
  *
  * PHP Version 7
  *
- * @package   vain-cache
+ * @package   Redis
  * @license   https://opensource.org/licenses/MIT MIT License
- * @link      https://github.com/allflame/vain-cache
+ * @link      https://vainyl.com
  */
-
+declare(strict_types = 1);
 namespace Vainyl\Redis\Multi;
 
 use Vainyl\Core\Id\AbstractIdentifiable;
@@ -148,7 +148,7 @@ abstract class AbstractMultiRedis extends AbstractIdentifiable implements MultiR
             return $this;
         }
 
-        return $this->expire($key, $ttl);
+        return $this->expire($key, (int)$ttl);
     }
 
     /**
