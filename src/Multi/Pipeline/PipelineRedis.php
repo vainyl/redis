@@ -37,6 +37,6 @@ class PipelineRedis extends AbstractMultiRedis
      */
     public function multi() : MultiRedisInterface
     {
-        throw new MixedModeRedisException($this);
+        throw new MixedModeRedisException($this->getRedis());
     }
 }

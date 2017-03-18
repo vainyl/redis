@@ -11,7 +11,8 @@
 
 namespace Vainyl\Redis\Multi;
 
-use Vainyl\Redis\Exception\LevelIntegrityRedisException;
+use Vainyl\Core\Id\AbstractIdentifiable;
+use Vainyl\Database\Exception\LevelIntegrityException;
 use Vainyl\Redis\RedisInterface;
 
 /**
@@ -19,7 +20,7 @@ use Vainyl\Redis\RedisInterface;
  *
  * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
  */
-abstract class AbstractMultiRedis implements MultiRedisInterface
+abstract class AbstractMultiRedis extends AbstractIdentifiable implements MultiRedisInterface
 {
     private $redis;
 
@@ -537,7 +538,7 @@ abstract class AbstractMultiRedis implements MultiRedisInterface
         }
 
         if (0 > $currentLevel) {
-            throw new LevelIntegrityRedisException($this, $currentLevel);
+            throw new LevelIntegrityException($this->redis, $currentLevel);
         }
 
         return $this->redis->exec($this);
