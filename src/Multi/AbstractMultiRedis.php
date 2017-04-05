@@ -37,6 +37,14 @@ abstract class AbstractMultiRedis extends AbstractIdentifiable implements MultiR
     }
 
     /**
+     * @inheritDoc
+     */
+    public function getId(): string
+    {
+        return spl_object_hash($this);
+    }
+
+    /**
      * @return int
      */
     protected function increaseLevel(): int
