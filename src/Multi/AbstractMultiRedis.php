@@ -1,17 +1,18 @@
 <?php
 /**
- * Vain Framework
+ * Vainyl
  *
  * PHP Version 7
  *
- * @package   vain-cache
+ * @package   Redis
  * @license   https://opensource.org/licenses/MIT MIT License
- * @link      https://github.com/allflame/vain-cache
+ * @link      https://vainyl.com
  */
-
+declare(strict_types = 1);
 namespace Vainyl\Redis\Multi;
 
-use Vainyl\Redis\Exception\LevelIntegrityRedisException;
+use Vainyl\Core\Id\AbstractIdentifiable;
+use Vainyl\Database\Exception\LevelIntegrityException;
 use Vainyl\Redis\RedisInterface;
 
 /**
@@ -19,7 +20,7 @@ use Vainyl\Redis\RedisInterface;
  *
  * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
  */
-abstract class AbstractMultiRedis implements MultiRedisInterface
+abstract class AbstractMultiRedis extends AbstractIdentifiable implements MultiRedisInterface
 {
     private $redis;
 
@@ -33,6 +34,14 @@ abstract class AbstractMultiRedis implements MultiRedisInterface
     public function __construct(RedisInterface $redisInterface)
     {
         $this->redis = $redisInterface;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getId(): string
+    {
+        return spl_object_hash($this);
     }
 
     /**
@@ -147,7 +156,7 @@ abstract class AbstractMultiRedis implements MultiRedisInterface
             return $this;
         }
 
-        return $this->expire($key, $ttl);
+        return $this->expire($key, (int)$ttl);
     }
 
     /**
@@ -537,7 +546,7 @@ abstract class AbstractMultiRedis implements MultiRedisInterface
         }
 
         if (0 > $currentLevel) {
-            throw new LevelIntegrityRedisException($this, $currentLevel);
+            throw new LevelIntegrityException($this->redis, $currentLevel);
         }
 
         return $this->redis->exec($this);

@@ -1,17 +1,17 @@
 <?php
 /**
- * Vain Framework
+ * Vainyl
  *
  * PHP Version 7
  *
- * @package   vain-redis
+ * @package   Redis
  * @license   https://opensource.org/licenses/MIT MIT License
- * @link      https://github.com/allflame/vain-redis
+ * @link      https://vainyl.com
  */
-
+declare(strict_types = 1);
 namespace Vainyl\Redis\Extension;
 
-use Vain\Core\Extension\AbstractExtension;
+use Vainyl\Core\Extension\AbstractExtension;
 
 /**
  * Class RedisExtension

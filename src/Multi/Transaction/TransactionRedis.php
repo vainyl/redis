@@ -1,14 +1,14 @@
 <?php
 /**
- * Vain Framework
+ * Vainyl
  *
  * PHP Version 7
  *
- * @package   vain-cache
+ * @package   Redis
  * @license   https://opensource.org/licenses/MIT MIT License
- * @link      https://github.com/allflame/vain-cache
+ * @link      https://vainyl.com
  */
-
+declare(strict_types = 1);
 namespace Vainyl\Redis\Multi\Transaction;
 
 use Vainyl\Redis\Exception\MixedModeRedisException;
@@ -27,7 +27,7 @@ class TransactionRedis extends AbstractMultiRedis
      */
     public function pipeline() : MultiRedisInterface
     {
-        throw new MixedModeRedisException($this);
+        throw new MixedModeRedisException($this->getRedis());
     }
 
     /**
