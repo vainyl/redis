@@ -11,7 +11,7 @@
 declare(strict_types = 1);
 namespace Vainyl\Redis\Multi;
 
-use Vainyl\Core\Id\IdentifiableInterface;
+use Vainyl\Core\IdentifiableInterface;
 
 /**
  * Interface MultiRedisInterface

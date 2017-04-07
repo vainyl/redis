@@ -11,7 +11,7 @@
 declare(strict_types = 1);
 namespace Vainyl\Redis\Multi;
 
-use Vainyl\Core\Id\AbstractIdentifiable;
+use Vainyl\Core\AbstractIdentifiable;
 use Vainyl\Database\Exception\LevelIntegrityException;
 use Vainyl\Redis\RedisInterface;
 

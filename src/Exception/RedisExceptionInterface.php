@@ -12,7 +12,7 @@ declare(strict_types = 1);
 
 namespace Vainyl\Redis\Exception;
 
-use Vainyl\Core\ArrayX\ArrayInterface;
+use Vainyl\Core\ArrayInterface;
 use Vainyl\Redis\RedisInterface;
 
 /**
