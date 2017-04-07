@@ -8,7 +8,8 @@
  * @license   https://opensource.org/licenses/MIT MIT License
  * @link      https://vainyl.com
  */
-declare(strict_types = 1);
+declare(strict_types=1);
+
 namespace Vainyl\Redis\Multi\Pipeline;
 
 use Vainyl\Redis\Exception\MixedModeRedisException;
@@ -25,7 +26,7 @@ class PipelineRedis extends AbstractMultiRedis
     /**
      * @inheritDoc
      */
-    public function pipeline() : MultiRedisInterface
+    public function pipeline(): MultiRedisInterface
     {
         $this->increaseLevel();
 
@@ -35,7 +36,7 @@ class PipelineRedis extends AbstractMultiRedis
     /**
      * @inheritDoc
      */
-    public function multi() : MultiRedisInterface
+    public function multi(): MultiRedisInterface
     {
         throw new MixedModeRedisException($this->getRedis());
     }

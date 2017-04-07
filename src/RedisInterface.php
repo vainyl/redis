@@ -8,7 +8,7 @@
  * @license   https://opensource.org/licenses/MIT MIT License
  * @link      https://vainyl.com
  */
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Vainyl\Redis;
 
@@ -577,7 +577,7 @@ interface RedisInterface extends CacheInterface, DatabaseInterface
      *
      * @return bool
      */
-    public function expire(string $ket, int $ttl) : bool;
+    public function expire(string $ket, int $ttl): bool;
 
     /**
      * @param string $key
