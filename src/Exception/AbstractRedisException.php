@@ -19,6 +19,8 @@ use Vainyl\Redis\RedisInterface;
  * Class AbstractRedisException
  *
  * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
+ *
+ * @method RedisInterface getDatabase
  */
 abstract class AbstractRedisException extends AbstractDatabaseException implements RedisExceptionInterface
 {
