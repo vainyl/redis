@@ -1179,13 +1179,14 @@ interface RedisInterface extends CacheInterface, DatabaseInterface
     public function zRevRank(string $key, string $member): int;
 
     /**
+     * @param string $key
      * @param int    $cursor
      * @param string $pattern
      * @param int    $count
      *
      * @return array
      */
-    public function zScan(int $cursor, string $pattern = '', int $count = 0): array;
+    public function zScan(string $key, int $cursor, string $pattern = '', int $count = 0): array;
 
     /**
      * @param string $key
