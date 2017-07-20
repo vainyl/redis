@@ -911,9 +911,9 @@ interface RedisInterface extends CacheInterface, DatabaseInterface
     public function swapDb(int $source, int $destination): bool;
 
     /**
-     * @return int
+     * @return float
      */
-    public function time(): int;
+    public function time(): float;
 
     /**
      * @param string $key
