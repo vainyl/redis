@@ -868,9 +868,9 @@ interface RedisInterface extends CacheInterface, DatabaseInterface
      * @param int    $offset
      * @param int    $value
      *
-     * @return bool
+     * @return string
      */
-    public function setRange(string $key, int $offset, $value): bool;
+    public function setRange(string $key, int $offset, $value): string;
 
     /**
      * @param string $key
