@@ -236,9 +236,9 @@ interface RedisInterface extends CacheInterface, DatabaseInterface
      * @param string $key
      * @param int    $offset
      *
-     * @return bool
+     * @return int
      */
-    public function getBit(string $key, int $offset): bool;
+    public function getBit(string $key, int $offset): int;
 
     /**
      * @param string $key
