@@ -976,6 +976,16 @@ interface RedisInterface extends CacheInterface, DatabaseInterface
      * @param int    $score
      * @param mixed  $value
      *
+     * @return bool
+     */
+    public function zAddCond(string $key, string $mode, int $score, $value): bool;
+
+    /**
+     * @param string $key
+     * @param string $mode
+     * @param int    $score
+     * @param mixed  $value
+     *
      * @return mixed
      */
     public function zAddMod(string $key, string $mode, int $score, $value): bool;
