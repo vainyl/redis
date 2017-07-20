@@ -792,13 +792,14 @@ interface RedisInterface extends CacheInterface, DatabaseInterface
     public function sRem(string $key, string $member): bool;
 
     /**
+     * @param string $key
      * @param int    $cursor
      * @param string $pattern
      * @param int    $count
      *
      * @return array
      */
-    public function sScan(int $cursor, string $pattern = '', int $count = 0): array;
+    public function sScan(string $key, int $cursor, string $pattern = '', int $count = 0): array;
 
     /**
      * @param array $keys
