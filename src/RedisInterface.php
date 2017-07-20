@@ -128,6 +128,13 @@ interface RedisInterface extends CacheInterface, DatabaseInterface
     public function decrBy(string $key, int $value): int;
 
     /**
+     * @param MultiRedisInterface $multiRedis
+     *
+     * @return array
+     */
+    public function exec(MultiRedisInterface $multiRedis): array;
+
+    /**
      * @param string $key
      *
      * @return bool
