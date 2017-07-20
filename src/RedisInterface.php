@@ -98,9 +98,9 @@ interface RedisInterface extends CacheInterface, DatabaseInterface
      * @param string $destination
      * @param array  $sources
      *
-     * @return bool
+     * @return int
      */
-    public function bitOp(string $key, string $operation, string $destination, array $sources): bool;
+    public function bitOp(string $key, string $operation, string $destination, array $sources): int;
 
     /**
      * @param string $key
