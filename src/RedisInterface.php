@@ -337,13 +337,14 @@ interface RedisInterface extends CacheInterface, DatabaseInterface
     public function hMSet(string $key, array $keysAndValues): bool;
 
     /**
+     * @param string $key
      * @param int    $cursor
      * @param string $pattern
      * @param int    $count
      *
      * @return array
      */
-    public function hScan(int $cursor, string $pattern = '', int $count = 0): array;
+    public function hScan(string $key, int $cursor, string $pattern = '', int $count = 0): array;
 
     /**
      * @param string $key
