@@ -759,13 +759,13 @@ interface RedisInterface extends CacheInterface, DatabaseInterface
     public function sMembers(string $key): array;
 
     /**
-     * @param string $member
+     * @param mixed  $member
      * @param string $destination
      * @param string $source
      *
      * @return bool
      */
-    public function sMove(string $member, string $destination, string $source): bool;
+    public function sMove($member, string $destination, string $source): bool;
 
     /**
      * @param string $key
