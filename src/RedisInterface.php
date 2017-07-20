@@ -608,9 +608,9 @@ interface RedisInterface extends CacheInterface, DatabaseInterface
      * @param string $destination
      * @param array  $sources
      *
-     * @return int
+     * @return bool
      */
-    public function pfMerge(string $destination, array $sources): int;
+    public function pfMerge(string $destination, array $sources): bool;
 
     /**
      * @param string $message
