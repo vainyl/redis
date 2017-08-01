@@ -26,18 +26,18 @@ class TransactionRedis extends AbstractMultiRedis
     /**
      * @inheritDoc
      */
-    public function pipeline(): MultiRedisInterface
-    {
-        throw new MixedModeRedisException($this->getRedis());
-    }
-
-    /**
-     * @inheritDoc
-     */
     public function multi(): MultiRedisInterface
     {
         $this->increaseLevel();
 
         return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function pipeline(): MultiRedisInterface
+    {
+        throw new MixedModeRedisException($this->getRedis());
     }
 }
