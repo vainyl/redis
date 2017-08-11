@@ -25,6 +25,9 @@
             "url": "https://satis.vainyl.com:444"
         }
     ],
+    "suggest" : {
+        "vainyl/credis-bridge" : "CRedis native extension adapter"
+    },
     "prefer-stable": true,
     "minimum-stability": "dev"
 }
