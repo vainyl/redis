@@ -21,4 +21,11 @@ use Vainyl\Core\Extension\AbstractFrameworkExtension;
  */
 class RedisExtension extends AbstractFrameworkExtension
 {
+    /**
+     * @inheritDoc
+     */
+    public function getCompilerPasses(): array
+    {
+     return [[new RedisScriptCompilerPass()]];
+    }
 }
