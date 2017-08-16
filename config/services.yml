@@ -1,0 +1,12 @@
+services:
+  redis.script.storage:
+    class: Vainyl\Redis\Storage\RedisScriptStorage
+    arguments: ['@map.prototype']
+  redis.script.zaddcond:
+    class: Vainyl\Redis\Script\ZAddCondScript
+    tags:
+      - {name: redis.script}
+  redis.script.zaddnxxx:
+    class: Vainyl\Redis\Script\ZAddNxXxScript
+    tags:
+      - {name: redis.script}
