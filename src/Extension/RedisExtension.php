@@ -26,6 +26,6 @@ class RedisExtension extends AbstractFrameworkExtension
      */
     public function getCompilerPasses(): array
     {
-     return [[new RedisScriptCompilerPass()]];
+        return [[new RedisScriptCompilerPass()]];
     }
 }
