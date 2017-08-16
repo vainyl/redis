@@ -12,7 +12,9 @@ declare(strict_types=1);
 
 namespace Vainyl\Redis\Exception;
 
-use Vainyl\Core\ArrayInterface;
+use Vainyl\Cache\Exception\CacheExceptionInterface;
+use Vainyl\Core\Exception\CoreExceptionInterface;
+use Vainyl\Database\Exception\DatabaseExceptionInterface;
 use Vainyl\Redis\RedisInterface;
 
 /**
@@ -20,7 +22,7 @@ use Vainyl\Redis\RedisInterface;
  *
  * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
  */
-interface RedisExceptionInterface extends ArrayInterface, \Throwable
+interface RedisExceptionInterface extends CoreExceptionInterface, DatabaseExceptionInterface, CacheExceptionInterface
 {
     /**
      * @return RedisInterface

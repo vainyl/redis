@@ -12,7 +12,7 @@ declare(strict_types=1);
 
 namespace Vainyl\Redis;
 
-use Psr\SimpleCache\CacheInterface;
+use Vainyl\Cache\CacheInterface;
 use Vainyl\Database\DatabaseInterface;
 use Vainyl\Redis\Multi\MultiRedisInterface;
 
