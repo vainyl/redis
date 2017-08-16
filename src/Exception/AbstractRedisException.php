@@ -12,18 +12,20 @@ declare(strict_types=1);
 
 namespace Vainyl\Redis\Exception;
 
-use Vainyl\Database\Exception\AbstractDatabaseException;
+use Vainyl\Cache\CacheInterface;
+use Vainyl\Core\Exception\AbstractCoreException;
+use Vainyl\Database\DatabaseInterface;
 use Vainyl\Redis\RedisInterface;
 
 /**
  * Class AbstractRedisException
  *
  * @author Taras P. Girnyk <taras.p.gyrnik@gmail.com>
- *
- * @method RedisInterface getDatabase
  */
-abstract class AbstractRedisException extends AbstractDatabaseException implements RedisExceptionInterface
+abstract class AbstractRedisException extends AbstractCoreException implements RedisExceptionInterface
 {
+    private $redis;
+
     /**
      * RedisException constructor.
      *
@@ -34,7 +36,24 @@ abstract class AbstractRedisException extends AbstractDatabaseException implemen
      */
     public function __construct(RedisInterface $redis, string $message, int $code = 500, \Exception $previous = null)
     {
-        parent::__construct($redis, $message, $code, $previous);
+        $this->redis = $redis;
+        parent::__construct($message, $code, $previous);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getCache(): CacheInterface
+    {
+        return $this->getRedis();
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getDatabase(): DatabaseInterface
+    {
+        return $this->getRedis();
     }
 
     /**
@@ -42,6 +61,14 @@ abstract class AbstractRedisException extends AbstractDatabaseException implemen
      */
     public function getRedis(): RedisInterface
     {
-        return $this->getDatabase();
+        return $this->redis;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function toArray(): array
+    {
+        return array_merge(['redis' => $this->redis->getName()], parent::toArray());
     }
 }
