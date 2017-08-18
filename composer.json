@@ -14,10 +14,10 @@
     },
     "require": {
         "php": ">=7.1",
-        "vainyl/cache": "dev-master",
-        "vainyl/core": "dev-master",
-        "vainyl/connection": "dev-master",
-        "vainyl/database": "dev-master"
+        "vainyl/cache": "0.2.x-dev",
+        "vainyl/core": "0.2.x-dev",
+        "vainyl/connection": "0.2.x-dev",
+        "vainyl/database": "0.2.x-dev"
     },
     "repositories": [
         {
